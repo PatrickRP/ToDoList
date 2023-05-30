@@ -4,7 +4,9 @@ const ToDo = ( {toDo}) => {
     return (
         <div className="tarefas">
             <div className="conteudo">
-                <p>{toDo.conteudo /* Verificar como fazer isso direito (botões do lado)*/} <button className="edit">Editar</button> <button className="del">Deletar</button></p> 
+                <p>{toDo.conteudo}</p> 
+                <button className="edit">Editar</button> 
+                <button className="del">Deletar</button>
             </div>
         </div>
         
