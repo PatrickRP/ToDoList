@@ -19,7 +19,7 @@ function App() {
       <ToDoForm />
       <div>
         {toDo.map((toDo) => (
-          <ToDo toDo={toDo} />
+          <ToDo key={toDo.id} toDo={toDo} />
         ))}  
       </div>    
     </div>
