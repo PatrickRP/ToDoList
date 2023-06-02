@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import './App.css';
+import Login from './pages/Login';
+import './pages/Login.css';
 import reportWebVitals from './reportWebVitals';
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/app' Component={App} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
