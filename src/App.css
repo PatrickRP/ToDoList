@@ -1,28 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  background-color: rgb(121, 120, 120);
+  width: 100%;
+  min-width: 100vh;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 }
 
 .todo-input {
+  background-color: rgb(49, 49, 49);
   margin-bottom: 20px;
+  min-width: 200px;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  box-shadow: 5px 4px 40px black;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin: 20px;
+}
+
+.todo-tarefa {
+  width: 300px;
+  padding: 8px;
+  margin: 10px;
+  margin-right: 8px;
+  border-radius: 10px;
+  background-color: black;
+  font-size: 20px;
+  color: white;
 }
 
 .todo-input button {
+  width: 70px;
+  padding: 8px;
+  font-size: 20px;
   background-color: green;
   color: white;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .todo-list {
+  display: block;
+  margin: 20px;
+  max-height: 10px;
   list-style-type: none;
   padding: 0;
 }
 
+.todo-btn-delete{
+  margin: 0;
+}
+
 .todo-list li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+}
+
+.todo-list .todo-text {
+  color: white;
+  font-size: 20px;
 }
 
 .todo-list li.completed .todo-text {
@@ -32,5 +82,11 @@
 
 .todo-list li button {
   border: none;
-  background-color: white;
+  width: 20px;
+  background-color: rgb(49, 49, 49);
+}
+
+.todo-list li input {
+  width: 30px;
+  margin: 10px;
 }
