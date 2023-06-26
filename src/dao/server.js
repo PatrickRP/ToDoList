@@ -1,39 +1,25 @@
-import express from 'express';
-const app = express();
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Configuração do servidor e middleware
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyA2x9DipVtiBECfDMI17IN4UkM8BkFsnqg",
+  authDomain: "to-do-list-a4856.firebaseapp.com",
+  projectId: "to-do-list-a4856",
+  storageBucket: "to-do-list-a4856.appspot.com",
+  messagingSenderId: "180664116057",
+  appId: "1:180664116057:web:eee940811943c1fc88a248",
+  measurementId: "G-YW0WY5EL24"
+};
 
-const port = 3000; // Porta do servidor
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
 
-app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`);
-});
-
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
-  host: 'localhost', // Host do banco de dados
-  user: 'root', // Usuário do banco de dados
-  password: '94412210', // Senha do banco de dados
-  database: 'to-do' // Nome do banco de dados
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.error('Erro ao conectar ao banco de dados:', err);
-  } else {
-    console.log('Conexão bem-sucedida com o banco de dados');
-    }
-});
-
-// Exemplo de rota para buscar dados do banco de dados
-app.get('/dados', (req, res) => {
-    connection.query('SELECT * FROM user', (err, rows) => {
-      if (err) {
-        console.error('Erro ao executar a consulta:', err);
-        res.status(500).json({ error: 'Erro ao buscar dados' });
-      } else {
-        res.json(rows);
-      }
-    });
-});
+export { db, auth };

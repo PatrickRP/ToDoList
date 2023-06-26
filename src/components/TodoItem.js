@@ -5,9 +5,7 @@ const TodoItem = ({ todo, deleteTodo, toggleTodo }) => {
   return (
     <li className={todo.completed ? 'completed' : ''}>
       <span className="todo-text">{todo.text}</span>
-      <button onClick={() => deleteTodo(todo.id)}>
-        <BiTrash/>
-      </button>
+      <BiTrash className="delete" onClick={() => deleteTodo(todo.id)} />
       <input
         type="checkbox"
         checked={todo.completed}

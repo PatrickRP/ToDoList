@@ -27,27 +27,25 @@ function App() {
   return (
     <div className="App">
       <h1>To-Do List</h1>
-      <div className="todo-input">
+      <div class="input-group">
         <input
-          className="todo-tarefa"
+          placeholder="Enter new item here"
           type="text"
+          id="input-field"
           value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Enter a new task"
-        />
-        <button onClick={addTodo}>Salvar</button>
-      
-        <ul className="todo-list">
-          {todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              deleteTodo={deleteTodo}
-              toggleTodo={toggleTodo}
-            />
-          ))}
-        </ul>
-      </div>
+          onChange={(e) => setText(e.target.value)}/>
+        <button class="submit-button" onClick={addTodo}><span>ADD</span></button>
+	    </div>
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+          />
+        ))}
+      </ul>
     </div>
   );
 }
